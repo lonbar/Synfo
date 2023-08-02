@@ -29,12 +29,14 @@ requirements:
                 df['timestamp'] = pandas.to_datetime(df['timestamp'],
                                                      format='%Y-%m-%d %H:%M:%S')
                 date = df['timestamp'][0].date()
+                title = df['# hostname'][0]
                 df['timestamp'] = df['timestamp'].dt.strftime('%H:%M:%S')
                 plot = df.plot(x='timestamp',
                                y=['bread/s',
                                   'bwrtn/s'],
                                xlabel="Time",
                                ylabel="processed data (512 b / s)",
+                               title=title,
                                label=['rate data read',
                                       'rate data written'],
                                rot=25).get_figure()

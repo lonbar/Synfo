@@ -29,6 +29,7 @@ requirements:
                 df['timestamp'] = pandas.to_datetime(df['timestamp'],
                                                      format='%Y-%m-%d %H:%M:%S')
                 date = df['timestamp'][0].date()
+                title = df['# hostname'][0]
                 df['timestamp'] = df['timestamp'].dt.strftime('%H:%M:%S')
                 plot = df.plot(x='timestamp',
                                y=['%user',
@@ -36,6 +37,7 @@ requirements:
                                   '%memused'],
                                xlabel="Time",
                                ylabel="Percentage",
+                               title=title,
                                label=['user CPU %',
                                       'idle CPU %',
                                       'memory %'],
