@@ -4,8 +4,8 @@ This workflow recovers system information from a node on a given day.
 Information it collects:
 
 * CPU usage,
-*  memory usage,
-*  reading and writing speeds.
+* memory usage,
+* reading and writing speeds.
 
 It should be run with a Common Workflow Language (CWL) implementation.
 
@@ -24,7 +24,11 @@ cwltool get_resources.cwl --date XX
 ```
 where `XX` is a date as a two-digit number.
 Valid inputs are, e.g., `01`, `09`, `15`, `30`.
-More detailed usage instructions can be found at
+The workflow can handle multiple dates simultaneously; each date should be prefixed by its own flag, e.g.:
+```
+cwltool get_resources.cwl --date 01 --date 02
+```
+More information can be found by running
 ```
 cwltool get_resources.cwl -h
 ```

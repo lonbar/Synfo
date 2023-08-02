@@ -2,7 +2,7 @@ cwlVersion: v1.2
 class: CommandLineTool
 baseCommand: [sadf, -dht, --, -prub]
 
-stdout: output.csv
+stdout: $(inputs['date']).csv
 
 inputs:
     date:
@@ -16,4 +16,4 @@ outputs:
     log:
         type: File
         outputBinding:
-            glob: output.csv
+            glob: $(inputs['date']).csv
