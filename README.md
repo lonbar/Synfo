@@ -1,13 +1,12 @@
-# System-information
-
-This workflow recovers system information from a node on a given day.
+# System Information (Synfo)
+Synfo is a tiny workflow that recovers system information from a node on a given day.
 Information it collects:
 
 * CPU usage,
 * memory usage,
 * reading and writing speeds.
 
-It should be run with a Common Workflow Language (CWL) implementation.
+It should be run with a valid [Common Workflow Language](https://www.commonwl.org/) (CWL) implementation.
 
 ## Requirements
 * `sar` & `sadf` (part of the [sysstat](https://github.com/sysstat/sysstat) package)
